@@ -34,6 +34,10 @@ img{
     max-width: 100%;
     vertical-align: middle;
 }
+h1,h2,h3,h4,h5,h6{
+    color: var(--white);
+    font-weight: 600;
+}
 .container{
     max-width: 1170px;
     margin: auto;
@@ -66,4 +70,33 @@ img{
 .about-content img{
     max-width: 150px;
     border: 5px solid var(--dark-light);
+    border-radius: 50%;
+    margin: 0 0 15px;
+}
+.about-content h1{
+    font-size: 28px;
+    margin: 0 0 8px;
+}
+.about-content p span{
+    font-weight: 600;
+    text-transform: capitalize;
+}
+.about-content p a{
+    color: var(--main-color);
+    text-transform: capitalize;
+    font-weight: 600;
+    position: relative;
+}
+.about-content p a::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    width: 0%;
+    background-color: var(--main-color);
+    transition: width 0.3s ease;
+}
+.about-content p a:hover::before{
+    width: 100%;
 }
