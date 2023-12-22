@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;@400;@600;@700&display=swap');
+
 :root{
     --main-color: #e98b2c;
     --dark: #1b1b22;
@@ -18,8 +20,50 @@
 body{
     font-size: 16px;
     line-height: 1.5;
+    font-family: 'Nunito',sans-serif;
+    font-weight: 300;
     color: var(--white-light);
     background-color: var(--dark);
     -webkit-tap-highlight-color: transparent;
     overflow-x: hidden;
+}
+a{
+    text-decoration: none;
+}
+img{
+    max-width: 100%;
+    vertical-align: middle;
+}
+.container{
+    max-width: 1170px;
+    margin: auto;
+}
+.min-vh-100{
+    min-height: 100vh;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+::-webkit-scrollbar{
+    width: 5px;
+}
+::-webkit-scrollbar-track{
+    background-color: var(--dark);
+}
+::-webkit-scrollbar-thumb{
+    background-color: var(--main-color);
+}
+.about-section .min-vh-100{
+    padding: 120px 15px;
+}
+.about-content{
+    max-width: 620px;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+.about-content img{
+    max-width: 150px;
+    border: 5px solid var(--dark-light);
 }
