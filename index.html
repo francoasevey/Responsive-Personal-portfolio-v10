@@ -9,8 +9,11 @@
 </head>
 <body>
 
-  <div class="bg-animation-effect"></div>
-  <section class="about-section">
+  <div class="bg-animation-effect">
+
+  </div>
+
+  <section class="about-section hidden">
     <div class="container">
       <div class="row min-vh-100">
         <div class="about-content">
@@ -26,6 +29,24 @@
             <div class="skill-item">jquery</div>
             <div class="skill-item">php</div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="portfolio-section sec-padding">
+    <div class="container">
+      <div class="row">
+        <div class="section-title">
+          <h2>recent works</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="portfolio-filter">
+          <button type="button" title="Show All Works" class="portfolio-filter-btn active" data-filter="all">All</button>
+          <button type="button" title="Filter by Front-End" class="portfolio-filter-btn" data-filter="front-end">Front-end</button>
+          <button type="button" title="Filter by Back-End" class="portfolio-filter-btn" data-filter="back-end">Back-end</button>
+          <button type="button" title="Filter by Bootstrap" class="portfolio-filter-btn" data-filter="bootstrap">bootstrap</button>
         </div>
       </div>
     </div>
