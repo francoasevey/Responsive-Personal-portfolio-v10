@@ -58,6 +58,47 @@ h1,h2,h3,h4,h5,h6{
 ::-webkit-scrollbar-thumb{
     background-color: var(--main-color);
 }
+
+.bg-animation-effect{
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-evenly;
+}
+.bg-animation-effect div{
+    height: 4px;
+    width: 4px;
+    background-color: var(--dark-light);
+    margin-left: calc((100% - 40px) / 11);
+    border-radius: 50%;
+}
+.bg-animation-effect div:nth-child(even){
+    animation: evenItems 9s linear infinite;
+}
+@keyframes evenItems{
+    0%{
+        transform: translateY(0vh);
+    }
+    100%{
+        transform: translateY(12.5vh);
+    }
+}
+.bg-animation-effect div:nth-child(odd){
+    animation: oddItems 8s linear infinite;
+}
+@keyframes oddItems{
+    0%{
+        transform: translateY(0vh);
+    }
+    100%{
+        transform: translateY(-12.5vh);
+    }
+}
 .about-section .min-vh-100{
     padding: 120px 15px;
 }
