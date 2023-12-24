@@ -59,6 +59,36 @@ button{
     font-family: inherit;
     font-weight: inherit;
 }
+.btn{
+    background-color: var(--main-color);
+    padding: 9px 25px;
+    font-family: inherit;
+    font-size: 16px;
+    color: var(--white);
+    text-transform: capitalize;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    font-weight: 600;
+}
+.btn::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    border: 1px solid var(--white);
+    transform: translate(4px,4px);
+    transition: transform 0.3s ease;
+    pointer-events: none;
+}
+@media(min-width:992px){
+    .btn:hover::before{
+        transform: translate(0px,0px);
+    }
+}
 .section-title{
     padding: 0 15px;
     width: 100%;
@@ -179,10 +209,15 @@ button{
     font-size: 16px;
     text-transform: capitalize;
 }
+
+.portfolio-section{
+    padding-bottom: 70px;
+}
 .portfolio-filter{
     padding: 0 15px;
     width: 100%;
     text-align: center;
+    margin-bottom: 30px;
 }
 .portfolio-filter-btn{
     padding: 4px 10px;
@@ -205,6 +240,7 @@ button{
 .portfolio-item{
     width: calc((100% / 3) - 30px);
     margin: 0 15px 30px;
+    cursor: pointer;
 }
 .portfolio-item-thumbnail{
     position: relative;
@@ -214,10 +250,11 @@ button{
     content: '';
     position: absolute;
     left: 0;
-    height: 50%;
+    height: 0%;
     width: 100%;
     background-color: var(--dark-light);
     opacity: 0.8;
+    transition: height 0.3s ease;
 }
 .portfolio-item-thumbnail::before{
     top: 0;
@@ -225,15 +262,31 @@ button{
 .portfolio-item-thumbnail::after{
     bottom: 0;
 }
+.portfolio-item:hover .portfolio-item-thumbnail::before,
+.portfolio-item:hover .portfolio-item-thumbnail::after{
+    height: 50%;
+}
 .portfolio-item-thumbnail .btn{
     position: absolute;
     left: 50%;
     top: 50%;
     z-index: 1;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+.portfolio-item:hover .portfolio-item-thumbnail .btn{
+    transition-delay: 0.2s;
+    opacity: 1;
+    transform: translate(-50%,-50%) scale(1);
 }
 .portfolio-item img{
     width: 100%;
+}
+.portfolio-item h3{
+    font-size: 20px;
+    margin: 10px 0 5px;
+    text-transform: capitalize;
 }
 .portfolio-item-details{
     display: none;
