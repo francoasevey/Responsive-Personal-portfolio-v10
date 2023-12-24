@@ -201,3 +201,40 @@ button{
     color: var(--white);
     cursor: auto;
 }
+
+.portfolio-item{
+    width: calc((100% / 3) - 30px);
+    margin: 0 15px 30px;
+}
+.portfolio-item-thumbnail{
+    position: relative;
+}
+.portfolio-item-thumbnail::before,
+.portfolio-item-thumbnail::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    height: 50%;
+    width: 100%;
+    background-color: var(--dark-light);
+    opacity: 0.8;
+}
+.portfolio-item-thumbnail::before{
+    top: 0;
+}
+.portfolio-item-thumbnail::after{
+    bottom: 0;
+}
+.portfolio-item-thumbnail .btn{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+}
+.portfolio-item img{
+    width: 100%;
+}
+.portfolio-item-details{
+    display: none;
+}
