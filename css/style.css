@@ -90,6 +90,36 @@ button{
         transform: translate(0px,0px);
     }
 }
+.close-btn{
+    height: 40px;
+    width: 40px;
+    background-color: var(--dark);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+}
+.close-btn::before,
+.close-btn::after{
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 20px;
+    left: 50%;
+    top: 50%;
+    background-color: var(--white-light);
+    transition: transform 0.3s ease;
+}
+.close-btn::before{
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.close-btn::after{
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+.close-btn:hover::before,
+.close-btn:hover::after{
+    transform: translate(-50%, -50%);
+}
 .section-title{
     padding: 0 15px;
     width: 100%;
@@ -325,4 +355,68 @@ button{
 .pp-content{
     max-width: 850px;
     margin: 50px auto 60px;
+}
+.pp-header{
+    position: relative;
+}
+.pp-header h2{
+    font-size: 20px;
+    text-transform: capitalize;
+    margin: 0 0 10px;
+    padding-right: 50px;
+}
+.pp-header h2 span{
+    font-weight: 300;
+}
+.pp-close-btn{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.pp-close-btn{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.pp-thumbnail{
+    padding: 20px 0;
+}
+.pp-header h3{
+    font-size: 28px;
+    text-transform: capitalize;
+}
+.pp-body{
+    padding: 15px 0;
+}
+.pp-footer{
+    padding: 40px 0 0;
+    display: flex;
+}
+.pp-body .description{
+    margin: 0 0 30px;
+}
+.pp-body .general-info p{
+    margin-bottom: 10px;
+    font-weight: 600;
+} .pp-body .general-info p span{
+    font-weight: 300;
+    margin-left: 5px;
+}
+.pp-body .general-info p a{
+    color: var(--main-color);
+}
+.pp-footer-left,
+.pp-footer-right{
+    flex: 1;
+}
+.pp-footer-right{
+    text-align: right;
+}
+.pp-footer h3{
+    text-transform: capitalize;
+    font-size: 20px;
+    margin: 30px 0 15px;
+}
+.pp-footer img{
+    max-width: 120px;
 }
