@@ -26,7 +26,6 @@ body{
     background-color: var(--dark);
     -webkit-tap-highlight-color: transparent;
     overflow-x: hidden;
-    overflow-y: hidden;
 }
 a{
     text-decoration: none;
@@ -322,6 +321,7 @@ button{
 .portfolio-item-details{
     display: none;
 }
+
 .portfolio-popup{
     position: fixed;
     left: 0;
@@ -329,6 +329,7 @@ button{
     height: 100%;
     width: 100%;
     z-index: 200;
+    visibility: hidden;
 }
 .portfolio-popup::before,
 .portfolio-popup::after{

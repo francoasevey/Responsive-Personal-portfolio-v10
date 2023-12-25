@@ -9,3 +9,13 @@ function bgAnimationItems(){
     }
 }
 bgAnimationItems();
+
+function filterItems(filterBtn){
+    const selectCategory = filterBtn.getAttribute("data-filter");
+    document.querySelectorAll(".portfolio-item").forEach((item) => {
+        document.querySelectorAll(".portfolio-item").forEach((item) =>{
+            const category = item.getAttribute('data-category').split(',');
+        })
+    })
+}
+filterItems(document.querySelector(".portfolio-filter-btn.active"));
