@@ -26,6 +26,7 @@ body{
     background-color: var(--dark);
     -webkit-tap-highlight-color: transparent;
     overflow-x: hidden;
+    overflow-y: hidden;
 }
 a{
     text-decoration: none;
@@ -290,4 +291,38 @@ button{
 }
 .portfolio-item-details{
     display: none;
+}
+.portfolio-popup{
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 200;
+}
+.portfolio-popup::before,
+.portfolio-popup::after{
+    content: '';
+    position: absolute;
+    height: 50%;
+    width: 100%;
+    background-color: var(--dark-light);
+    z-index: -1;
+}
+.portfolio-popup::before{
+    top: 0;
+    left: 0;
+}
+.portfolio-popup::after{
+    right: 0;
+    bottom: 0;
+}
+.pp-inner{
+    height: 100vh;
+    padding: 0 15px;
+    overflow-y: auto;
+}
+.pp-content{
+    max-width: 850px;
+    margin: 50px auto 60px;
 }
