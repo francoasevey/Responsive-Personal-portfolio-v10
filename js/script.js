@@ -56,6 +56,7 @@ document.addEventListener("click", (e) =>{
         portfolioItemIndex = Array.from(portfolioItems).indexOf(currentItem);
         togglePopup();
         portfolioItemDetails();
+        updateNextPrevItem();
     }
 });
 
@@ -71,4 +72,33 @@ function portfolioItemDetails(){
 
     document.querySelector(".pp-header h3").innerHTML =
     portfolioItems[portfolioItemIndex].querySelector(".portfolio-item-title").innerHTML;
+
+    document.querySelector(".pp-body").innerHTML =
+    portfolioItems[portfolioItemIndex].querySelector(".portfolio-item-details").innerHTML;
+
+    document.querySelector(".pp-counter").innerHTML = `${portfolioItemIndex+1} of ${portfolioItems.length} ( <span title="category">${document.querySelector(".portfolio-filter-btn.active").innerHTML}</span>)`;
+}
+
+function updateNextPrevItem(){
+    if(portfolioItemIndex !== 0){
+        document.querySelector(".pp-footer-left").classList.remove("hidden");
+        document.querySelector(".pp-footer-left h3").innerHTML =
+        portfolioItems[portfolioItemIndex-1].querySelector("h3").innerHTML;
+
+        document.querySelector(".pp-footer-left img").src =
+        portfolioItems[portfolioItemIndex-1].querySelector("img").src;
+
+    } else {
+        document.querySelector(".pp-footer-left").classList.add("hidden");
+    }
+    if(portfolioItemIndex !== portfolioItems.length-1){
+        document.querySelector(".pp-footer-right").classList.remove("hidden");
+        document.querySelector(".pp-footer-right h3").innerHTML =
+        portfolioItems[portfolioItemIndex+1].querySelector("h3").innerHTML;
+
+        document.querySelector(".pp-footer-right img").src =
+        portfolioItems[portfolioItemIndex+1].querySelector("img").src;
+    } else{
+        document.querySelector(".pp-footer-right").classList.add("hidden");
+    }
 }
