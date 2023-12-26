@@ -102,3 +102,29 @@ function updateNextPrevItem(){
         document.querySelector(".pp-footer-right").classList.add("hidden");
     }
 }
+
+document.querySelector(".pp-prev-btn").addEventListener("click", () =>{
+    changePortfolioItem("prev");
+});
+
+document.querySelector(".pp-next-btn").addEventListener("click", () =>{
+    changePortfolioItem("next");
+});
+
+function changePortfolioItem(direction){
+    if(direction == "prev"){
+        portfolioItemIndex--;
+    }
+    else{
+        portfolioItemIndex++;
+    }
+    document.querySelector(".pp-overlay").classList.add(direction);
+    setTimeout(() => {
+        document.querySelector(".pp-inner").scrollTo(0,0);
+        portfolioItemDetails();
+        updateNextPrevItem();
+    }, 400);
+    setTimeout(() =>{
+    document.querySelector(".pp-overlay").classList.remove(direction);
+    }, 1000);
+}
