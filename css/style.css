@@ -27,6 +27,9 @@ body{
     -webkit-tap-highlight-color: transparent;
     overflow-x: hidden;
 }
+body.hide-scrolling{
+    overflow: hidden;
+}
 a{
     text-decoration: none;
 }

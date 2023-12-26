@@ -10,12 +10,18 @@ function bgAnimationItems(){
 }
 bgAnimationItems();
 
+function toggleBodyScrolling(){
+    document.body.classList.toggle("hide-scrolling")
+}
+
 const filterBtnsContainer = document.querySelector(".portfolio-filter");
+let portfolioItems;
 filterBtnsContainer.addEventListener("click", (e) =>{
     if(e.target.classList.contains("portfolio-filter-btn") && 
     !e.target.classList.contains("active")){
         filterBtnsContainer.querySelector(".active").classList.remove("active");
         e.target.classList.add("active");
+        toggleBodyScrolling();
         document.querySelector(".filter-status").classList.add("active");
         document.querySelector(".filter-status p").innerHTML = `filtering <span>${e.target.innerHTML}</span> Works`;
         setTimeout(() => {
@@ -23,13 +29,13 @@ filterBtnsContainer.addEventListener("click", (e) =>{
         }, 400);
         setTimeout(() =>{
             document.querySelector(".filter-status").classList.remove("active");
+            toggleBodyScrolling();
         },800);
     }
 });
 
 function filterItems(filterBtn){
     const selectCategory = filterBtn.getAttribute("data-filter");
-    document.querySelectorAll(".portfolio-item").forEach((item) => {
         document.querySelectorAll(".portfolio-item").forEach((item) =>{
             const category = item.getAttribute('data-category').split(',');
             if(category.indexOf(selectCategory) !== -1 || selectCategory === "all"){
@@ -39,6 +45,14 @@ function filterItems(filterBtn){
                 item.classList.remove("show");
             }
         })
-    })
+     portfolioItems = document.querySelectorAll(".portfolio-item.show");
 }
 filterItems(document.querySelector(".portfolio-filter-btn.active"));
+
+let portfolioItemIndex;
+document.addEventListener("click", (e) =>{
+    if(e.target.closest(".portfolio-item")){
+        const currentItem = e.target.closest(".portfolio-item");
+        portfolioItemIndex = Array.from(portfolioItems).indexOf(currentItem);
+    }
+})
