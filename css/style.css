@@ -561,7 +561,21 @@ button{
     justify-content: center;
     color: var(--white-light);
     border-radius: 50%;
+    transition: all 0.3 ease;
+    margin: 0 3px;
+}
+.contact-info-item .social-links a:hover{
+    color: var(--main-color);
+    border-color: var(--main-color);
 }
 .contact-content .toggle-contact-form-btn{
     margin-top: 30px;
+}
+.contact-form{
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 200;
 }
