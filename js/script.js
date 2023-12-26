@@ -54,5 +54,12 @@ document.addEventListener("click", (e) =>{
     if(e.target.closest(".portfolio-item")){
         const currentItem = e.target.closest(".portfolio-item");
         portfolioItemIndex = Array.from(portfolioItems).indexOf(currentItem);
+        togglePopup();
     }
-})
+});
+
+function togglePopup(){
+    document.querySelector(".portfolio-popup").classList.toggle("open");
+    toggleBodyScrolling();
+}
+document.querySelector(".pp-close-btn").addEventListener("click", togglePopup);

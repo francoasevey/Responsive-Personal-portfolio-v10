@@ -371,14 +371,18 @@ button{
     z-index: 200;
     visibility: hidden;
 }
+.portfolio-popup.open{
+    visibility: visible;
+}
 .portfolio-popup::before,
 .portfolio-popup::after{
     content: '';
     position: absolute;
     height: 50%;
-    width: 100%;
+    width: 0%;
     background-color: var(--dark-light);
     z-index: -1;
+    transition: all 0.5s ease 0.5s;
 }
 .portfolio-popup::before{
     top: 0;
@@ -388,9 +392,22 @@ button{
     right: 0;
     bottom: 0;
 }
+.portfolio-popup.open::before,
+.portfolio-popup.open::after{
+    width: 100%;
+    transition-delay: 0s;
+}
 .pp-inner{
     height: 100vh;
     padding: 0 15px;
+    opacity: 0;
+    transition: all 0.5s ease;
+    transform: translateY(20%);
+}
+.portfolio-popup.open .pp-inner{
+    opacity: 1;
+    transition-delay: 0.5s;
+    transform: translateY(0%);
     overflow-y: auto;
 }
 .pp-content{
