@@ -55,6 +55,7 @@ document.addEventListener("click", (e) =>{
         const currentItem = e.target.closest(".portfolio-item");
         portfolioItemIndex = Array.from(portfolioItems).indexOf(currentItem);
         togglePopup();
+        portfolioItemDetails();
     }
 });
 
@@ -63,3 +64,11 @@ function togglePopup(){
     toggleBodyScrolling();
 }
 document.querySelector(".pp-close-btn").addEventListener("click", togglePopup);
+
+function portfolioItemDetails(){
+    document.querySelector(".pp-thumbnail img").src =
+    portfolioItems[portfolioItemIndex].querySelector("img").src;
+
+    document.querySelector(".pp-header h3").innerHTML =
+    portfolioItems[portfolioItemIndex].querySelector(".portfolio-item-title").innerHTML;
+}
