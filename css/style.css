@@ -44,6 +44,7 @@ h1,h2,h3,h4,h5,h6{
 .container{
     max-width: 1170px;
     margin: auto;
+    width: 100%;
 }
 .min-vh-100{
     min-height: 100vh;
@@ -527,4 +528,40 @@ button{
 }
 .pp-footer img{
     max-width: 120px;
+}
+.contact-section.active{
+    display: flex;
+}
+.contact-content{
+    max-width: 700px;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+.contact-text{
+    margin-bottom: 30px;
+}
+.contact-info-item{
+    margin-bottom: 10px;
+}
+.contact-info-item p{
+    font-size: 24px;
+    font-weight: 600;
+}
+.contact-info-item .social-links span{
+    margin-right: 4px;
+}
+.contact-info-item .social-links a{
+    height: 40px;
+    width: 40px;
+    border: 1px solid var(--white-light);
+    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white-light);
+    border-radius: 50%;
+}
+.contact-content .toggle-contact-form-btn{
+    margin-top: 30px;
 }
