@@ -196,10 +196,53 @@ button{
     height: 100%;
     width: 100%;
     z-index: 99;
+    visibility: hidden;
+}
+.overlay-effect.active{
+    visibility: visible;
+    display: flex;
+    flex-direction: column-reverse;
 }
 .overlay-effect-item{
     height: 10vh;
     background-color: var(--dark-light);
+    transition: all 0.5s ease;
+}
+.overlay-effect-item:nth-child(odd){
+    transform: translateX(-100%);
+}
+.overlay-effect-item:nth-child(even){
+    transform: translateX(100%);
+}
+.overlay-effect.active .overlay-effect-item{
+    transform: translateX(0%);
+}
+.overlay-effect-item:nth-child(2){
+    transition-delay: 0.05s;
+}
+.overlay-effect-item:nth-child(3){
+    transition-delay: 0.10s;
+}
+.overlay-effect-item:nth-child(4){
+    transition-delay: 0.15s;
+}
+.overlay-effect-item:nth-child(5){
+    transition-delay: 0.20s;
+}
+.overlay-effect-item:nth-child(6){
+    transition-delay: 0.25s;
+}
+.overlay-effect-item:nth-child(7){
+    transition-delay: 0.30s;
+}
+.overlay-effect-item:nth-child(8){
+    transition-delay: 0.35s;
+}
+.overlay-effect-item:nth-child(9){
+    transition-delay: 0.40s;
+}
+.overlay-effect-item:nth-child(10){
+    transition-delay: 0.45s;
 }
 .header{
     padding: 25px 0 0;
@@ -219,6 +262,7 @@ button{
     justify-content: center;
     position: relative;
     z-index: 101;
+    margin-right: 15px;
 }
 .header .nav-toggler span{
     height: 2px;
@@ -226,6 +270,10 @@ button{
     background-color: var(--white);
     display: inline-block;
     position: relative;
+    transition: all 0.3 ease;
+}
+.header .nav-toggler.active span{
+    background-color: transparent;
 }
 .header .nav-toggler span::before,
 .header .nav-toggler span::after{
@@ -245,9 +293,24 @@ button{
     right: 0;
     transform: translateY(8px);
 }
+.header .nav-toggler.active span::before{
+    width: 100%;
+    transform: rotate(45deg);
+}
+.header .nav-toggler.active span::after{
+    width: 100%;
+    transform: rotate(-45deg);
+}
 .header .nav-toggler:hover span::before,
 .header .nav-toggler:hover span::after{
     width: 100%;
+}
+@media (min-width:992px){
+    .header .nav-toggler.active:hover span::before
+    .header .nav-toggler.active:hover span::after{
+        transform: rotate(0deg);
+    }
+    
 }
 .header .nav{
     position: fixed;
@@ -258,6 +321,7 @@ button{
     z-index: 100;
     padding: 0 15px;
     overflow-y: auto;
+    visibility: hidden;
 }
 .header .nav-inner{
     min-height: 100vh;

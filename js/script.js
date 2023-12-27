@@ -10,6 +10,18 @@ function bgAnimationItems(){
 }
 bgAnimationItems();
 
+const navToggler = document.querySelector(".nav-toggler");
+navToggler.addEventListener("click", toggleNavbar);
+
+function toggleNavbar(){
+    navToggler.classList.toggle("active");
+    toggleOverlayEffect();
+}
+
+function toggleOverlayEffect(){
+    document.querySelector(".overlay-effect").classList.toggle("active");
+}
+
 function toggleBodyScrolling(){
     document.body.classList.toggle("hide-scrolling")
 }
