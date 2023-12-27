@@ -15,7 +15,28 @@ navToggler.addEventListener("click", toggleNavbar);
 
 function toggleNavbar(){
     navToggler.classList.toggle("active");
+    document.querySelector(".nav").classList.toggle("open");
     toggleOverlayEffect();
+    toggleBodyScrolling();
+}
+
+document.addEventListener("click", (e) => {
+    if(e.target.classList.contains("link-item") && e.target.hash !== ""){
+        const hash = e.target.hash;
+        if(e.target.classList.contains("nav-item")){
+            activeSection(hash);
+            toggleNavbar();
+        }
+        else{
+            toggleBodyScrolling();
+            toggleOverlayEffect();
+        }
+    }
+});
+
+function activeSection(sectionId){
+    document.querySelector("section.active").classList.remove("active");
+    document.querySelector(sectionId).classList.add("active");
 }
 
 function toggleOverlayEffect(){
