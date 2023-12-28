@@ -30,6 +30,13 @@ document.addEventListener("click", (e) => {
         else{
             toggleBodyScrolling();
             toggleOverlayEffect();
+            document.querySelector(".nav-toggler").classList.add("toggle-hide");
+            setTimeout(()=> {
+                activeSection(hash);
+                toggleOverlayEffect();
+                toggleBodyScrolling();
+                document.querySelector(".nav-toggler").classList.remove("toggle-hide");
+            }, 950);
         }
     }
 });
@@ -37,6 +44,7 @@ document.addEventListener("click", (e) => {
 function activeSection(sectionId){
     document.querySelector("section.active").classList.remove("active");
     document.querySelector(sectionId).classList.add("active");
+    window.scrollTo(0,0)
 }
 
 function toggleOverlayEffect(){

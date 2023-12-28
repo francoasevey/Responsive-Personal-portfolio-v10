@@ -269,6 +269,12 @@ button{
     position: relative;
     z-index: 101;
     margin-right: 15px;
+    transition: all 0.3s ease 0.4s;
+}
+.header .nav-toggler.toggle-hide{
+    transform: scale(0);
+    pointer-events: none;
+    transition-delay: 0s;
 }
 .header .nav-toggler span{
     height: 2px;
