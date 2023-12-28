@@ -744,6 +744,7 @@ button{
     width: 100%;
     margin: auto;
     text-align: center;
+    padding: 0 15px;
 }
 .contact-text{
     margin-bottom: 30px;
@@ -847,4 +848,42 @@ button{
     height: 120px;
     padding-top: 15px;
     resize: none;
+}
+
+@media (max-width:991px) {
+    .bg-animation-effect .col-10,
+    .bg-animation-effect .col-9,
+    .bg-animation-effect .col-8{
+        display: none;
+    }
+    .bg-animation-effect div{
+        margin-left: calc((100% - 28px) / 8);
+    }
+    .portfolio-item{
+        width: calc(50% - 30px);
+    }
+}
+@media (max-width:767px) {
+    .bg-animation-effect .col-7,
+    .bg-animation-effect .col-6{
+        display: none;
+    }
+    .bg-animation-effect div{
+        margin-left: calc((100% - 20px) / 6);
+    }
+    .portfolio-item{
+        width: calc(100% - 30px);
+    }
+}
+@media (max-width:575px) {
+    .pp-footer h3{
+        font-size: 16px;
+    }
+    .contact-info-item p{
+        font-size: 18px;
+    }
+    .contact-info-item span{
+        display: block;
+        margin-bottom: 10px;
+    }
 }
